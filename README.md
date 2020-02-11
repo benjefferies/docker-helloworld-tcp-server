@@ -1,5 +1,5 @@
 # docker-helloworld-tcp-server
-Simple docker image implemented in python
+Simple TCP server docker image implemented in python
 
 ## Running
 
