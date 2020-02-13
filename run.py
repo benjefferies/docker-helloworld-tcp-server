@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import socket
+import os
 
 def start_tcp_server():
   # Create a socket
@@ -9,7 +10,7 @@ def start_tcp_server():
   sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
   # Set the client socket's TCP "well-known port" number
-  well_known_port = 8080
+  well_known_port = int(os.getenv("TCP_PORT", "8080"))
   sock.bind(('', well_known_port))
 
   # Set the number of clients waiting for connection that can be queued
